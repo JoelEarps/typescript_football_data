@@ -2,6 +2,7 @@ import { CsvFileReader } from "./CsvFileReader/CsvFileReader";
 
 const reader = new CsvFileReader("football.csv");
 reader.read();
+console.log(reader.data);
 // initial analysis - count number of times man united have won
 
 let manUtdWin: number = 0;
