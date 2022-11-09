@@ -18,3 +18,17 @@ const matches = fs
   });
 
 console.log(matches);
+
+// initial analysis - count number of times man united have won
+
+let manUtdWin: number = 0;
+
+for (let match of matches) {
+  if (match[1] === "Man United" && match[5] === "H") {
+    manUtdWin++;
+  } else if (match[2] === "Man United" && match[5] === "A") {
+    manUtdWin++;
+  }
+}
+
+console.log(manUtdWin);
