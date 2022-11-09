@@ -37,6 +37,8 @@ class CsvFileReader {
                 row[2],
                 parseInt(row[3]),
                 parseInt(row[4]),
+                row[5],
+                row[6],
             ];
         });
     }

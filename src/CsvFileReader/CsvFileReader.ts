@@ -5,6 +5,7 @@ import path from "path";
 // you require anything inside node standard library you need to install
 // @types/node
 import { dateToString } from "../utils/parseDate";
+import { MatchResult } from "../utils/matchResult";
 
 export class CsvFileReader {
   public data: string[][] = [];
@@ -32,6 +33,8 @@ export class CsvFileReader {
           row[2],
           parseInt(row[3]),
           parseInt(row[4]),
+          row[5] as MatchResult,
+          row[6],
         ];
       });
   }

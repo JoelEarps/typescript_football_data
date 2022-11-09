@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const CsvFileReader_1 = require("./CsvFileReader/CsvFileReader");
+const matchResult_1 = require("./utils/matchResult");
 const reader = new CsvFileReader_1.CsvFileReader("football.csv");
 reader.read();
 console.log(reader.data);
@@ -8,17 +9,11 @@ console.log(reader.data);
 let manUtdWin = 0;
 // enums - enumeration
 // Used simply to signal to other engineers that this is a collection to many closely related values
-var MatchResult;
-(function (MatchResult) {
-    MatchResult["HomeWin"] = "H";
-    MatchResult["AwayWin"] = "A";
-    MatchResult["Draw"] = "D";
-})(MatchResult || (MatchResult = {}));
 for (let match of reader.data) {
-    if (match[1] === "Man United" && match[5] === MatchResult.HomeWin) {
+    if (match[1] === "Man United" && match[5] === matchResult_1.MatchResult.HomeWin) {
         manUtdWin++;
     }
-    else if (match[2] === "Man United" && match[5] === MatchResult.AwayWin) {
+    else if (match[2] === "Man United" && match[5] === matchResult_1.MatchResult.AwayWin) {
         manUtdWin++;
     }
 }

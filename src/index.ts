@@ -1,5 +1,5 @@
 import { CsvFileReader } from "./CsvFileReader/CsvFileReader";
-
+import { MatchResult } from "./utils/matchResult";
 const reader = new CsvFileReader("football.csv");
 reader.read();
 console.log(reader.data);
@@ -8,12 +8,6 @@ console.log(reader.data);
 let manUtdWin: number = 0;
 // enums - enumeration
 // Used simply to signal to other engineers that this is a collection to many closely related values
-
-enum MatchResult {
-  HomeWin = "H",
-  AwayWin = "A",
-  Draw = "D",
-}
 
 for (let match of reader.data) {
   if (match[1] === "Man United" && match[5] === MatchResult.HomeWin) {
