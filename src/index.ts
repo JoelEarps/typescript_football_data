@@ -1,6 +1,6 @@
-import { CsvFileReader } from "./CsvFileReader/CsvFileReader";
+import { MatchReader } from "./MatchReader/MatchReader";
 import { MatchResult } from "./utils/matchResult";
-const reader = new CsvFileReader("football.csv");
+const reader = new MatchReader("football.csv");
 reader.read();
 console.log(reader.data);
 // initial analysis - count number of times man united have won

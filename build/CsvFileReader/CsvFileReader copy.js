@@ -10,6 +10,7 @@ const path_1 = __importDefault(require("path"));
 // TS reporting error incorrectly for us
 // you require anything inside node standard library you need to install
 // @types/node
+const parseDate_1 = require("../utils/parseDate");
 class CsvFileReader {
     constructor(filename) {
         this.filename = filename;
@@ -30,7 +31,17 @@ class CsvFileReader {
             .map((row) => {
             return row.split(",");
         })
-            .map(this.mapRow);
+            .map((row) => {
+            return [
+                (0, parseDate_1.dateToString)(row[0]),
+                row[1],
+                row[2],
+                parseInt(row[3]),
+                parseInt(row[4]),
+                row[5],
+                row[6],
+            ];
+        });
     }
 }
 exports.CsvFileReader = CsvFileReader;

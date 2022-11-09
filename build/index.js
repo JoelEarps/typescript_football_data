@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const CsvFileReader_1 = require("./CsvFileReader/CsvFileReader");
+const MatchReader_1 = require("./MatchReader/MatchReader");
 const matchResult_1 = require("./utils/matchResult");
-const reader = new CsvFileReader_1.CsvFileReader("football.csv");
+const reader = new MatchReader_1.MatchReader("football.csv");
 reader.read();
 console.log(reader.data);
 // initial analysis - count number of times man united have won
