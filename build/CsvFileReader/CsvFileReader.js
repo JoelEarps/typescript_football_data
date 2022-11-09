@@ -14,6 +14,7 @@ const parseDate_1 = require("../utils/parseDate");
 class CsvFileReader {
     constructor(filename) {
         this.filename = filename;
+        // Implcitely saying Match Data is an array
         this.data = [];
     }
     read() {

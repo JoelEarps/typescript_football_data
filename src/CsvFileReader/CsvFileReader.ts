@@ -6,9 +6,11 @@ import path from "path";
 // @types/node
 import { dateToString } from "../utils/parseDate";
 import { MatchResult } from "../utils/matchResult";
+import { MatchData } from "../utils/rowTuple";
 
 export class CsvFileReader {
-  public data: string[][] = [];
+  // Implcitely saying Match Data is an array
+  public data: MatchData[] = [];
 
   constructor(public filename: string) {}
 
@@ -26,7 +28,7 @@ export class CsvFileReader {
       .map((row: string): string[] => {
         return row.split(",");
       })
-      .map((row: string[]): any => {
+      .map((row: string[]): MatchData => {
         return [
           dateToString(row[0]),
           row[1],
