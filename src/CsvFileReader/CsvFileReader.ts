@@ -5,11 +5,9 @@ import path from "path";
 // you require anything inside node standard library you need to install
 // @types/node
 
-export abstract class CsvFileReader<T> {
+export class CsvFileReader {
   // Implcitely saying Match Data is an array
-  public data: T[] = [];
-
-  abstract mapRow(row: string[]): T;
+  public data: string[][] = [];
 
   constructor(public filename: string) {}
 
@@ -26,7 +24,6 @@ export abstract class CsvFileReader<T> {
       .split("\n")
       .map((row: string): string[] => {
         return row.split(",");
-      })
-      .map(this.mapRow);
+      });
   }
 }
